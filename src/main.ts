@@ -1,5 +1,11 @@
+import * as process from 'process';
+
+if (!process.env.IS_TS_NODE) {
+  require('module-alias/register');
+}
+
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { AppModule } from 'src/app.module';
 
 const port = 3000;
 async function bootstrap() {
